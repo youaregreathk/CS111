@@ -1,0 +1,19 @@
+Chris Laganiere: 404300154
+Juan Caesar Susilo: 004282294
+
+
+Steps in our 1a implementation:
+
+1. Store the char input stream into a dynamically allocated c string.
+
+2. Tokenize the c string into a linked list of tokens, (a struct that we defined) throwing an error if any invalid characters or sequences are found. 
+
+3. Check for and throw an error in the case of invalid syntax in the tokens linked list. Also handle newlines, which can be equivalent to sequences in some cases, and ignored in others.
+
+4. Turn the tokens linked list into a command stream (made of multiple linked root nodes of command struct trees).
+   We used two stacks (token stack and command stack) to properly build the command trees, reversing the order of the resulting command tree root node linked list.
+
+5. Read command streams by returning the first command struct tree root node and advancing a cursor.
+
+
+We don't know of any limitations with our implementation. All test cases pass, even some new ones we thought of and included.
